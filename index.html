@@ -28,6 +28,10 @@
 
     .activeBox {
         height:200px;
+        background: #E6E6E6;
+        padding:1rem 2rem;
+        border-radius: 16px;
+        /*box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #fff;*/
     }
 
     .disabledBox {
@@ -43,6 +47,7 @@
         color: var(--blue);
         opacity: 0.5;
         font-size: 10px;
+        font-weight: 400;
     }
 
     .disabledBox h1 {
@@ -54,10 +59,8 @@
 <body>
     <div class="p-3 mb-2 bg-secondary" id="demo-div">
         <a id="start_demo" class="btn btn-lg btn-success py-1" href="#" role="button">Start the demo</a>       
-        </div>
+    </div>
 
-
-    
     <div class="container">
         <div class="disabledBox" id="shadow1">
             <h3>Parking Passes</h3>
@@ -69,6 +72,11 @@
             <h3>Package</h3>
             <h1>Twin Luxury Room</h1>
         </div>
+        <div class="activeBox" id="shadow3">
+            <h1>Recieve Tickets</h3>
+            <p>Email will be sent to:<br>test@gmail.com</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id magna placerat purus posuere sodales in quis ipsum. Nunc sagittis finibus congue. Nulla tempor laoreet sapien nec sollicitudin. Maecenas sodales magna a ante malesuada vestibulum. In hac habitasse platea dictumst. Suspendisse pharetra risus sed neque ornare, in efficitur felis condimentum. Donec nec nunc in nisl semper fringilla et nec neque. Pellentesque scelerisque tortor eu ornare iaculis. Cras nec ipsum a urna iaculis pellentesque. Suspendisse faucibus eget dui vitae blandit. Nam nec nulla at ante faucibus dignissim. Suspendisse aliquet quis purus at scelerisque. Morbi posuere nisl id lacus rhoncus iaculis. Pellentesque ornare justo non aliquet venenatis. Suspendisse potenti.</p>
+        </div>
     </div>
 
 <script>
@@ -76,6 +84,7 @@
 function handleOrientation(event) {
   document.getElementById('shadow1').style.boxShadow = event.gamma + 'px ' + event.beta + 'px 12px #b8b9be,' + '-' + event.gamma + 'px ' + '-' + event.beta + 'px 12px #fff' ;
   document.getElementById('shadow2').style.boxShadow = event.gamma + 'px ' + event.beta + 'px 12px #b8b9be,' + '-' + event.gamma + 'px ' + '-' + event.beta + 'px 12px #fff' ;
+  document.getElementById('shadow3').style.boxShadow = 'inset ' + event.gamma + 'px ' + event.beta + 'px 5px #b8b9be,' + 'inset -' + event.gamma + 'px ' + '-' + event.beta + 'px 7px #fff' ;
 
   incrementEventCount();
 }
