@@ -71,6 +71,8 @@
         <a id="start_demo" class="btn btn-lg btn-success py-1" href="#" role="button">Start the demo</a>       
     </div>
 
+    <div id="message"></div>
+
     <div class="container">
         <div class="disabledBox" id="shadow1">
             <h3>Parking Passes</h3>
@@ -96,6 +98,8 @@ function handleOrientation(event) {
   document.getElementById('shadow1').style.boxShadow = event.gamma + 'px ' + event.beta + 'px 12px #b8b9be,' + '-' + event.gamma + 'px ' + '-' + event.beta + 'px 12px #fff' ;
   document.getElementById('shadow2').style.boxShadow = event.gamma + 'px ' + event.beta + 'px 12px #b8b9be,' + '-' + event.gamma + 'px ' + '-' + event.beta + 'px 12px #fff' ;
   document.getElementById('shadow3').style.boxShadow = 'inset ' + event.gamma + 'px ' + event.beta + 'px 5px #b8b9be,' + 'inset -' + event.gamma + 'px ' + '-' + event.beta + 'px 7px #fff' ;
+
+  document.getElementById('message').innerHTML += 'X = ' + event.gamma + '<br>Y = ' + event.beta;
 
   incrementEventCount();
 }
