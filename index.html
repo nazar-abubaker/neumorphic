@@ -56,12 +56,6 @@
         <a id="start_demo" class="btn btn-lg btn-success py-1" href="#" role="button">Start the demo</a>
         
         
-        <h4 style="margin-top:0.75rem;">Orientation</h4>
-        <ul>
-          <li>X-axis (β): <span id="Orientation_b">0</span><span>°</span></li>
-          <li>Y-axis (γ): <span id="Orientation_g">0</span><span>°</span></li>
-          <li>Z-axis (α): <span id="Orientation_a">0</span><span>°</span></li>
-        </ul>
         
         <h4>Accelerometer</h4>
         <ul>
@@ -106,10 +100,6 @@
 <script>
 
 function handleOrientation(event) {
-  updateFieldIfNotNull('Orientation_a', event.alpha);
-  updateFieldIfNotNull('Orientation_b', event.beta);
-  updateFieldIfNotNull('Orientation_g', event.gamma);
-
   document.getElementById('shadow1').style.boxShadow = event.gamma + 'px ' + event.beta + 'px 12px #b8b9be,' + '-' + event.gamma + 'px ' + '-' + event.beta + 'px 12px #fff' ;
   document.getElementById('shadow2').style.boxShadow = event.gamma + 'px ' + event.beta + 'px 12px #b8b9be,' + '-' + event.gamma + 'px ' + '-' + event.beta + 'px 12px #fff' ;
 
