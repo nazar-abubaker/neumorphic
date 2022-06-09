@@ -7,8 +7,17 @@
     <title>Document</title>
 </head>
 <style>
+    @import url("https://use.typekit.net/bny3zug.css");
+
+    :root {
+        --blue: #4D4F5C;
+    }
+
     html, body {
         background:#F0F0F0;
+        font-family: canada-type-gibson, sans-serif;
+        font-weight: 400;
+        font-style: normal;
     }
     
     .container {
@@ -25,10 +34,22 @@
     .disabledBox {
         background: #F0F0F0;
         border-bottom:8px solid red;
-        /*box-shadow:6px 6px 12px #b8b9be,-6px -6px 12px #fff!important;*/
+        box-shadow:6px 6px 12px #b8b9be,-6px -6px 12px #fff!important;
         margin-bottom:3rem;
         border-radius: 16px;
         padding:1rem 2rem;
+    }
+
+    .disabledBox h3 {
+        color: var(--blue);
+        opacity: 0.5;
+        font-size: 10px;
+    }
+
+    .disabledBox h1 {
+        color:var(--blue);
+        font-size: 16px;
+        font-weight: 700;
     }
 </style>
 <body>
@@ -89,9 +110,6 @@ function handleOrientation(event) {
   updateFieldIfNotNull('Orientation_a', event.alpha);
   updateFieldIfNotNull('Orientation_b', event.beta);
   updateFieldIfNotNull('Orientation_g', event.gamma);
-
-  let nGamma = -event.gamma;
-  let nBeta = -event.beta;
 
   document.getElementById('shadow1').style.boxShadow = event.gamma + 'px ' + event.beta + 'px 12px #b8b9be,' + '-' + event.gamma + 'px ' + '-' + event.beta + 'px 12px #fff' ;
   document.getElementById('shadow2').style.boxShadow = event.gamma + 'px ' + event.beta + 'px 12px #b8b9be,' + '-' + event.gamma + 'px ' + '-' + event.beta + 'px 12px #fff' ;
