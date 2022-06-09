@@ -93,6 +93,9 @@ function handleOrientation(event) {
   updateFieldIfNotNull('Orientation_a', event.alpha);
   updateFieldIfNotNull('Orientation_b', event.beta);
   updateFieldIfNotNull('Orientation_g', event.gamma);
+
+  document.getElementById('shadow1').style.boxShadow = event.beta + 'px ' + event.alpha + 'px black';
+
   incrementEventCount();
 }
 
@@ -122,7 +125,6 @@ function handleMotion(event) {
   updateFieldIfNotNull('Gyroscope_x', event.rotationRate.beta);
   updateFieldIfNotNull('Gyroscope_y', event.rotationRate.gamma);
 
-  document.getElementById('shadow1').style.boxShadow = event.beta + 'px ' + event.alpha + 'px black';
   incrementEventCount();
 }
 
