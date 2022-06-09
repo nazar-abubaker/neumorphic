@@ -95,7 +95,7 @@ function handleOrientation(event) {
   let nGamma = -event.gamma;
   let nBeta = -event.beta;
 
-  document.getElementById('shadow1').style.boxShadow = event.gamma + 'px ' + event.beta + 'px 12px #b8b9be,' + nGamma + 'px ' + nBeta + 'px 12px #b8b9be' ;
+  document.getElementById('shadow1').style.boxShadow = event.gamma + 'px ' + event.beta + 'px 12px #b8b9be,' - event.gamma + 'px ' - event.beta + 'px 12px #fff' ;
 
   incrementEventCount();
 }
