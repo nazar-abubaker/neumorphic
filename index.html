@@ -92,9 +92,6 @@
         <a id="start_demo" href="#" role="button">Start the demo</a>       
     </div>
 
-    <div id="m"></div>
-
-
     <div class="container">
         <div class="flex">
             <img src="img/arrow.png">
@@ -120,8 +117,6 @@
     </div>
 
 <script>
-
-document.getElementById('m').innerHTML = event.gamma;
 
 function handleOrientation(event) {
   document.getElementById('shadow1').style.boxShadow = event.gamma + 'px ' + event.beta + 'px 12px #b8b9be,' + '-' + event.gamma + 'px ' + '-' + event.beta + 'px 12px #fff' ;
@@ -165,8 +160,7 @@ demo_button.onclick = function(e) {
   }else{
     window.addEventListener("devicemotion", handleMotion);
     window.addEventListener("deviceorientation", handleOrientation);
-    //document.getElementById("start_demo").innerHTML = "Stop demo";
-    document.getElementById("start_demo").style.display = "none";
+    document.getElementById("start_demo").innerHTML = "Stop demo";
     is_running = true;
   }
 };
