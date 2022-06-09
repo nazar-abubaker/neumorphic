@@ -25,9 +25,7 @@
     .disabledBox {
         background: #F0F0F0;
         border-bottom:8px solid red;
-        /*box-shadow:6px 6px 12px #b8b9be,-6px -6px 12px #fff!important;*/
-        filter:         drop-shadow(0px 10px 10px rgba(0,0,0,0.2));
-        -webkit-filter: drop-shadow(0px 10px 10px rgba(0,0,0,0.2));
+        box-shadow:6px 6px 12px #b8b9be,-6px -6px 12px #fff!important;
         margin-bottom:3rem;
         border-radius: 16px;
         padding:1rem 2rem;
@@ -94,7 +92,7 @@ function handleOrientation(event) {
   updateFieldIfNotNull('Orientation_b', event.beta);
   updateFieldIfNotNull('Orientation_g', event.gamma);
 
-  document.getElementById('shadow1').style.boxShadow = event.beta + 'px ' + event.alpha + 'px black';
+  document.getElementById('shadow1').style.boxShadow = event.beta + 'px ' + event.alpha + 'px #b8b9be, -' + event.beta + 'px -' + event.alpha + 'px 12px #fff' ;
 
   incrementEventCount();
 }
