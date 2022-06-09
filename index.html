@@ -84,10 +84,11 @@
     .flex h3 {
         margin:0;
     }
+
 </style>
 <body>
     <div class="p-3 mb-2 bg-secondary" id="demo-div">
-        <a id="start_demo" class="btn btn-lg btn-success py-1" href="#" role="button">Start the demo</a>       
+        <a id="start_demo" href="#" role="button">Start the demo</a>       
     </div>
 
 
@@ -117,6 +118,8 @@
     </div>
 
 <script>
+
+document.getElementsByClassName('container').style.display = 'none';
 
 function handleOrientation(event) {
   document.getElementById('shadow1').style.boxShadow = event.gamma + 'px ' + event.beta + 'px 12px #b8b9be,' + '-' + event.gamma + 'px ' + '-' + event.beta + 'px 12px #fff' ;
@@ -158,6 +161,8 @@ demo_button.onclick = function(e) {
     window.removeEventListener("devicemotion", handleMotion);
     window.removeEventListener("deviceorientation", handleOrientation);
     demo_button.innerHTML = "Start demo";
+    document.getElementsByClassName('container').style.display = 'flex';
+
     is_running = false;
   }else{
     window.addEventListener("devicemotion", handleMotion);
