@@ -119,8 +119,6 @@
 
 <script>
 
-document.getElementsByClassName('container').style.display = 'none';
-
 function handleOrientation(event) {
   document.getElementById('shadow1').style.boxShadow = event.gamma + 'px ' + event.beta + 'px 12px #b8b9be,' + '-' + event.gamma + 'px ' + '-' + event.beta + 'px 12px #fff' ;
   document.getElementById('shadow2').style.boxShadow = event.gamma + 'px ' + event.beta + 'px 12px #b8b9be,' + '-' + event.gamma + 'px ' + '-' + event.beta + 'px 12px #fff' ;
@@ -161,13 +159,12 @@ demo_button.onclick = function(e) {
     window.removeEventListener("devicemotion", handleMotion);
     window.removeEventListener("deviceorientation", handleOrientation);
     demo_button.innerHTML = "Start demo";
-    document.getElementsByClassName('container').style.display = 'flex';
-
     is_running = false;
   }else{
     window.addEventListener("devicemotion", handleMotion);
     window.addEventListener("deviceorientation", handleOrientation);
     //document.getElementById("start_demo").innerHTML = "Stop demo";
+    document.getElementsByClassName('container').style.display = 'flex';
     document.getElementById("start_demo").style.display = "none";
     is_running = true;
   }
