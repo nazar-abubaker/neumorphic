@@ -92,7 +92,10 @@ function handleOrientation(event) {
   updateFieldIfNotNull('Orientation_b', event.beta);
   updateFieldIfNotNull('Orientation_g', event.gamma);
 
-  document.getElementById('shadow1').style.boxShadow = event.gamma + 'px ' + event.beta + 'px 12px #b8b9be' ;
+  let nGamma = -event.gamma;
+  let nBeta = -event.beta;
+
+  document.getElementById('shadow1').style.boxShadow = event.gamma + 'px ' + event.beta + 'px 12px #b8b9be,' + nGamma + 'px ' + nBeta + 'px 12px #b8b9be' ;
 
   incrementEventCount();
 }
