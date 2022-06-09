@@ -53,21 +53,7 @@
 </style>
 <body>
     <div class="p-3 mb-2 bg-secondary" id="demo-div">
-        <a id="start_demo" class="btn btn-lg btn-success py-1" href="#" role="button">Start the demo</a>
-       
-        <ul>
-          <li>X-axis: <span id="Accelerometer_gx">0</span><span> m/s<sup>2</sup></span></li>
-          <li>Y-axis: <span id="Accelerometer_gy">0</span><span> m/s<sup>2</sup></span></li>
-          <li>Z-axis: <span id="Accelerometer_gz">0</span><span> m/s<sup>2</sup></span></li>
-        </ul>
-        
-        <h4>Gyroscope</h4>
-        <ul>
-          <li>X-axis: <span id="Gyroscope_x">0</span><span>°/s</span></li>
-          <li>Y-axis: <span id="Gyroscope_y">0</span><span>°/s</span></li>
-          <li>Z-axis: <span id="Gyroscope_z">0</span><span>°/s</span></li>
-        </ul>
-        
+        <a id="start_demo" class="btn btn-lg btn-success py-1" href="#" role="button">Start the demo</a>       
         </div>
 
 
@@ -105,14 +91,6 @@ function updateFieldIfNotNull(fieldName, value, precision=10){
 }
 
 function handleMotion(event) {
-  updateFieldIfNotNull('Accelerometer_gx', event.accelerationIncludingGravity.x);
-  updateFieldIfNotNull('Accelerometer_gy', event.accelerationIncludingGravity.y);
-  updateFieldIfNotNull('Accelerometer_gz', event.accelerationIncludingGravity.z);
-
-  updateFieldIfNotNull('Gyroscope_z', event.rotationRate.alpha);
-  updateFieldIfNotNull('Gyroscope_x', event.rotationRate.beta);
-  updateFieldIfNotNull('Gyroscope_y', event.rotationRate.gamma);
-
   incrementEventCount();
 }
 
