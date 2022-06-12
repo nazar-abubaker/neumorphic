@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 <style>
     @import url("https://use.typekit.net/bny3zug.css");
@@ -14,18 +15,11 @@
 
     html, body {
         background:#F0F0F0;
-        font-family: canada-type-gibson, sans-serif;
+        font-family: canada-type-gibson, sans-serif !important;
         font-weight: 400;
         font-style: normal;
     }
     
-    .container {
-        display:flex;
-        flex-direction: column;
-        margin:0 auto;
-        max-width: 90%;
-    }
-
     .activeBox {
         background: #E6E6E6;
         padding:1rem 2rem;
@@ -41,7 +35,6 @@
         box-shadow:-6px -6px 12px #b8b9be;
         margin-bottom:3rem;
         border-radius: 16px;
-        padding:1rem 2rem;
     }
 
     .disabledBox h3 {
@@ -57,7 +50,7 @@
         font-weight: 600;
     }
 
-    .activeBox button {
+    .btn-primary {
         color:white;
         background:#3775C5;
         border:0px;
@@ -72,7 +65,6 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        border-bottom:1px solid rgb(50, 53, 66, .25);
         padding-bottom:1rem;
         margin-bottom:2rem;
     }
@@ -89,35 +81,64 @@
 
 </style>
 <body>
-    <div class="p-3 mb-2 bg-secondary" id="demo-div">
-        <a id="start_demo" href="#" role="button">Start the demo</a>       
+    <div class="d-flex flex-row"  id="demo-div">
+        <a class="btn btn-primary btn-lg" id="start_demo" href="#" role="button">Start the demo</a>       
     </div>
 
-    <div class="container">
-        <div class="flex">
-            <img src="img/arrow.png">
-            <h3>Extras</h3>
-        </div>
-
-        <div class="disabledBox" style="border-color: #3776C5" id="shadow1">
-            <h3>Parking Passes</h3>
-            <h1>Al Dana Amphitheatre Parking</h1>
-        </div>
-        <div class="disabledBox" style="border-color: #5E35B1" id="shadow2">
-            <h3>Hotel</h3>
-            <h1>Sofitel</h1>
-            <h3>Package</h3>
-            <h1>Twin Luxury Room</h1>
-        </div>
-        <div class="activeBox" id="shadow3">
-            <h1>Recieve Tickets</h3>
-            <p>Email will be sent to:<br>test@gmail.com</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id magna placerat purus posuere sodales in quis ipsum. Nunc sagittis finibus congue. Nulla tempor laoreet sapien nec sollicitudin. Maecenas sodales magna a ante malesuada vestibulum. In hac habitasse platea dictumst. Suspendisse pharetra risus sed neque ornare, in efficitur felis condimentum. Donec nec nunc in nisl semper fringilla et nec neque. Pellentesque scelerisque tortor eu ornare iaculis. Cras nec ipsum a urna iaculis pellentesque. Suspendisse faucibus eget dui vitae blandit. Nam nec nulla at ante faucibus dignissim. Suspendisse aliquet quis purus at scelerisque. Morbi posuere nisl id lacus rhoncus iaculis. Pellentesque ornare justo non aliquet venenatis. Suspendisse potenti.</p>
-            <button>CONTINUE</button>
+    <div class="container" id="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex flex-row align-items-center py-3 mb-5" style="border-bottom:1px solid rgb(50, 53, 66, .25);">
+                    <img class="me-2" src="img/arrow.png">
+                    <h5 class="mb-0">Extras</h5>
+                </div>
+                <div class="disabledBox p-4" style="border-color: #3776C5" id="shadow1">
+                    <h3>Parking Passes</h3>
+                    <h1 class="mb-0">Al Dana Amphitheatre Parking</h1>
+                </div>
+                <div class="disabledBox p-4" style="border-color: #5E35B1" id="shadow2">
+                    <h3>Hotel</h3>
+                    <h1 class="mb-4">Sofitel</h1>
+                    <h3>Package</h3>
+                    <div class="d-flex flex-row">
+                        <h1 class="me-auto mb-0">Twin Luxury Room</h1>
+                        <p class="mb-0">BD 104</p>
+                    </div>
+                </div>
+                <div class="activeBox p-4" id="shadow3">
+                    <h5 class="mb-4">Recieve Tickets</h5>
+                    <p class="mb-0">Email will be sent to:</p>
+                    <div class="d-flex flex-row mb-3">
+                        <h6 class="me-3">test@gmail.com</h6>
+                        <a href="#" class="">Change</a>
+                    </div>
+                    <div class="d-flex flex-row align-items-center py-3" style="border-top:2px solid rgba(50, 53, 66, 0.1)">
+                        <div class="form-check me-auto">
+                            <input class="form-check-input" type="checkbox" value="" id="whatsapp">
+                            <label class="form-check-label" for="whatsapp">
+                               via Whatsapp
+                            </label>
+                        </div>
+                          <p class="mb-0">BD 0.100</p>
+                    </div>
+                    <div class="d-flex flex-row align-items-center py-3" style="border-top:2px solid rgba(50, 53, 66, 0.1)">
+                        <div class="form-check me-auto">
+                            <input class="form-check-input" type="checkbox" value="" id="sms">
+                            <label class="form-check-label" for="sms">
+                                via SMS
+                            </label>
+                        </div>
+                          <p class="mb-0">BD 0.100</p>
+                    </div>
+                    <button class="btn btn-primary">CONTINUE</button>
+                </div>
+            </div>
         </div>
     </div>
 
 <script>
+
+document.getElementById('container').style.display = 'none';
 
 function handleOrientation(event) {
   document.getElementById('shadow1').style.boxShadow = event.gamma/3.5 + 'px ' + event.beta/3.5 + 'px 12px #b8b9be,' + '-' + event.gamma/3.5 + 'px ' + '-' + event.beta/3.5 + 'px 12px #fff' ;
@@ -144,6 +165,9 @@ let is_running = false;
 let demo_button = document.getElementById("start_demo");
 demo_button.onclick = function(e) {
   e.preventDefault();
+  demo_button.style.display = 'none';
+  document.getElementById('container').style.display = 'block';
+
   
   // Request permission for iOS 13+ devices
   if (
