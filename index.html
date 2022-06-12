@@ -61,34 +61,33 @@
         font-weight: 600;
     }
 
-    .flex {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        padding-bottom:1rem;
-        margin-bottom:2rem;
-    }
-
-    .flex img {
-        width:36px;
-        height:36px;
-        margin-right:1rem
-    }
-
-    .flex h3 {
-        margin:0;
+    .container {
+        width:90%;
     }
 
 </style>
 <body>
-    <div class="d-flex flex-row"  id="demo-div">
-        <a class="btn btn-primary btn-lg" id="start_demo" href="#" role="button">Start the demo</a>       
+    <!-- Start Demo Screen -->
+    <div class="container vh-100" id="demo-div">
+        <div class="row h-100">
+            <div class="col-12 h-100">
+                <div class="d-flex flex-row h-100">
+                    <div class="m-auto">
+                        <h1>Gyroscope Shadow</h1>
+                        <p class="lead mb-4">This demo requires the use of your gyroscope sensor on your device to alter the shadow of the cards.</p>
+                        <a class="btn btn-primary btn-lg" id="start_demo" href="#" role="button">Start the demo</a>    
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
 
+    <!-- Shadow prototype -->
     <div class="container" id="container">
         <div class="row">
             <div class="col-12">
-                <div class="d-flex flex-row align-items-center py-3 mb-5" style="border-bottom:1px solid rgb(50, 53, 66, .25);">
+                <div class="d-flex flex-row align-items-center py-3 mb-4" style="border-bottom:1px solid rgb(50, 53, 66, .25);">
                     <img class="me-2" src="img/arrow.png">
                     <h5 class="mb-0">Extras</h5>
                 </div>
@@ -165,7 +164,7 @@ let is_running = false;
 let demo_button = document.getElementById("start_demo");
 demo_button.onclick = function(e) {
   e.preventDefault();
-  demo_button.style.display = 'none';
+  document.getElementById('demo-div').style.display = 'none';
   document.getElementById('container').style.display = 'block';
 
   
