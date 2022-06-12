@@ -86,6 +86,8 @@
     </div>
 
     <!-- Shadow prototype -->
+    <div id="m"></div>
+
     <div class="container" id="container">
         <div class="row">
             <div class="col-12">
@@ -141,10 +143,6 @@
 
 document.getElementById('container').style.display = 'none';
 
-//document.querySelectorAll('activeBox').style.boxShadow = "inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #fff";
-//document.querySelectorAll('disabledBox').style.boxShadow = "6px 6px 12px #b8b9be,-6px -6px 12px #fff!important";
-//document.querySelectorAll('btn-primary').style.boxShadow = "0px 10px 20px rgb(55, 117, 197,0.4)";
-
 let activeBox = Array.from(
     document.getElementsByClassName('activeBox')
 );
@@ -171,6 +169,7 @@ function handleOrientation(event) {
   document.getElementById('shadow3').style.boxShadow = 'inset ' + event.gamma/8 + 'px ' + event.beta/8 + 'px 5px #b8b9be,' + 'inset -' + event.gamma/8 + 'px ' + '-' + event.beta/8 + 'px 7px #fff' ;
   document.getElementById('shadow4').style.boxShadow = event.gamma/3.5 + 'px ' + event.beta/3.5 + 'px 12px rgba(56, 114, 199, 0.5)' ;
 
+  document.getElementById('m').innerHTML += event.gamma;
   incrementEventCount();
 }
 
