@@ -103,7 +103,7 @@
                     <h3>Package</h3>
                     <div class="d-flex flex-row">
                         <h1 class="me-auto mb-0">Twin Luxury Room</h1>
-                        <p class="mb-0">BD 104</p>
+                        <p class="mb-0" style="color: #4D4F5C">BD 104</p>
                     </div>
                 </div>
                 <div class="activeBox mb-4 p-4" id="shadow3">
@@ -111,7 +111,7 @@
                     <p class="mb-0">Email will be sent to:</p>
                     <div class="d-flex flex-row mb-3">
                         <h6 class="me-3">test@gmail.com</h6>
-                        <a href="#" class="">Change</a>
+                        <a href="#" class="text-decoration-none">Change</a>
                     </div>
                     <div class="d-flex flex-row align-items-center py-3" style="border-top:2px solid rgba(50, 53, 66, 0.1)">
                         <div class="form-check me-auto">
@@ -140,6 +140,30 @@
 <script>
 
 document.getElementById('container').style.display = 'none';
+
+//document.querySelectorAll('activeBox').style.boxShadow = "inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #fff";
+//document.querySelectorAll('disabledBox').style.boxShadow = "6px 6px 12px #b8b9be,-6px -6px 12px #fff!important";
+//document.querySelectorAll('btn-primary').style.boxShadow = "0px 10px 20px rgb(55, 117, 197,0.4)";
+
+let activeBox = Array.from(
+    document.getElementsByClassName('activeBox')
+);
+let disabledBox = Array.from(
+    document.getElementsByClassName('disabledBox')
+);
+let btnPrimary = Array.from(
+    document.getElementsByClassName('btn-primary')
+);
+
+activeBox.forEach(ab => {
+    ab.style.boxShadow = "inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #fff"
+})
+disabledBox.forEach(db => {
+    db.style.boxShadow = "6px 6px 12px #b8b9be,-6px -6px 12px #fff!important"
+})
+btnPrimary.forEach(btn => {
+    btn.style.boxShadow = "0px 10px 20px rgb(55, 117, 197,0.4)"
+})
 
 function handleOrientation(event) {
   document.getElementById('shadow1').style.boxShadow = event.gamma/3.5 + 'px ' + event.beta/3.5 + 'px 12px #b8b9be,' + '-' + event.gamma/3.5 + 'px ' + '-' + event.beta/3.5 + 'px 12px #fff' ;
